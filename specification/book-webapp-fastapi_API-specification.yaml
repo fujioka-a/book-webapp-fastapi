@@ -91,12 +91,11 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
               examples:
                 example-1:
                   value:
                     status: succeeded
-                    message: registered
+                    message: updatered
         '401':
           description: Unauthorized
         '403':
@@ -108,12 +107,11 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties: {}
+              $ref: '#/components/schemas/Book'
             examples:
-              'Update one book(id: 142)':
+              Update one book:
                 value:
-                  id: 142
+                  id: '0142'
                   title: Software Design 2022.08
                   author: someone
                   company: 技術評論社
@@ -122,6 +120,22 @@ paths:
                   publishDate: '2019-08-24'
                   createdDatetime: '2019-08-24T10:12:20Z'
                   updateddDatetime: '2019-08-24T10:12:20Z'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Book'
+            examples:
+              example-1:
+                value:
+                  id: '0142'
+                  title: Software Design 2022.08
+                  author: someone
+                  company: 技術評論社
+                  category: technology
+                  country: Japan
+                  publishDate: '2019-08-24'
+                  createdDatetime: '2019-08-24T10:12:20Z'
+                  updateddDatetime: '2019-08-24T10:12:20Z'
+        description: Book info to update
       parameters:
         - schema:
             type: string
@@ -135,6 +149,16 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                example-1:
+                  value:
+                    status: succeeded
+                    message: deleted
         '401':
           description: Unauthorized
         '403':
@@ -159,17 +183,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Book'
+                type: object
               examples:
-                New Book Bob Fellow:
+                New Book created:
                   value:
-                    id: '0142'
-                    title: Software Design 2022.08
-                    author: someone
-                    company: 技術評論社
-                    category: technology
-                    country: Japan
-                    publishDate: '2019-08-24'
+                    status: succeeded
+                    message: created
         '401':
           description: Missing Required Information
         '404':
@@ -210,8 +229,6 @@ paths:
                   category: technology
                   country: Japan
                   publishDate: '2019-08-24'
-                  createdDatetime: '2019-08-24T10:12:20Z'
-                  updateddDatetime: '2019-08-24T10:12:20Z'
         description: Post the necessary fields for the API to create a new book.
       description: Create a new book.
       parameters:
@@ -228,7 +245,7 @@ components:
       type: object
       description: 書籍情報
       examples:
-        - id: ”0142"
+        - id: '0142'
           title: Software Design 2022.08
           author: someone
           company: 技術評論社

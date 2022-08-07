@@ -1,0 +1,21 @@
+{
+  "name": "book-webapp-fastapi",
+  "version": "1.0.0",
+  "description": "OpenAPIからのFastAPIへのエクスポートによる、基本的なWeb図書アプリの構築",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fujioka-a/book-webapp-fastapi.git"
+  },
+  "author": "fujioka.a",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fujioka-a/book-webapp-fastapi/issues"
+  },
+  "homepage": "https://github.com/fujioka-a/book-webapp-fastapi#readme",
+  "dependencies": {
+    "@stoplight/prism-cli": "^4.10.1"
+  }
+}
