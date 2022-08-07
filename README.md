@@ -26,11 +26,12 @@ OpenAPIからのFastAPIへのエクスポートによる、基本的なWeb図書
 ・１メソッド＆クラスに対して、Form形式である程度の枠を作成する。  
 　⇒Code形式で複製し、他メソッドを作成する。  
 ★パラメータの型定義、必須/非必須、Payload例など、コレ１つで出来ることが多い。  
-
+  
+![スクリーンショット 2022-08-07 17 08 38](https://user-images.githubusercontent.com/44053575/183281622-817116e3-59f3-412e-adc1-92db0fef03c8.png)  
+  
 2) prismを利用して、モックを立てて動作確認をする
 ・Stoplightで作成した仕様書をエクスポートする  
 ・以下コマンドからモックサーバーを配置する  
 ```
 npx prism mock book-webapp-fastapi_API-specification.yaml -p 8080
 ```
-
