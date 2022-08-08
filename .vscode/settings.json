@@ -40,5 +40,11 @@
     "test_*.py"
   ],
   "python.pythonPath": ".venv/bin/python3.9",
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "cSpell.words": [
+    "codegen",
+    "datamodel",
+    "fastapi",
+    "pydantic"
+  ]
 }

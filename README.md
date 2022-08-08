@@ -41,4 +41,8 @@ npx prism mock book-webapp-fastapi_API-specification.yaml -p 8080
   
 3)作成したAPI仕様書のymlから、FastAPIへのクラス作成  
 ・OpenAPI Generatorを利用する  
-・
+・datamodel-code-generator、pydanticをインストールする  
+・以下コマンドより、Dataclassを自動作成する  
+```
+datamodel-codegen --input openapi/specification/book-webapp-fastapi_API-specification.yaml --input-file-type openapi --output datamodel.py
+```
