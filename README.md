@@ -35,3 +35,10 @@ OpenAPIからのFastAPIへのエクスポートによる、基本的なWeb図書
 ```
 npx prism mock book-webapp-fastapi_API-specification.yaml -p 8080
 ```
+・Rest Clientを用いて、モックに対してアクセスをしてみる。  
+　・リクエストボディを持つ場合（PUT、POST）：「Contentーtype：application.json」を利用する  
+　・リクエストボディを持つ場合（GET、DELETE）：特になし  
+  
+3)作成したAPI仕様書のymlから、FastAPIへのクラス作成  
+・OpenAPI Generatorを利用する  
+・

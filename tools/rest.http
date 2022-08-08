@@ -33,3 +33,22 @@ Authorization: "Bearer abcd"
 ####
 DELETE http://127.0.0.1:8080/books/123
 Authorization: "Bearer abcd"
+#####pet example###############################################
+# $ curl -s -D /dev/stderr -X GET -H "Accept:application/json" http://localhost:4010/pet/0001?hoge=dow | json_pp
+# -s : not show progress
+# -D : show response header
+# -H : header
+# -u : basic authorization
+# >>> Add authorization header
+# >>>>> Authorization: Basic username:password
+GET http://127.0.0.1:8080/pet/0001?hoge=dow
+Accept: application/json
+# Authorization: "Accept:application/json"
+####
+GET http://127.0.0.1:8080/user/login?username=corrupti&password=iste
+####
+GET http://127.0.0.1:8080/store/order/8
+####
+GET http://127.0.0.1:8080/pet/436357421
+Content-Type: application/json
+api_key: "aaa"
