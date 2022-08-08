@@ -3,6 +3,10 @@ info:
   title: book-webapp-fastapi_API-specification
   version: '0.1'
   description: OpenAPI定義による図書WebアプリのAPI仕様書
+  summary: 図書Webアプリのサマリ
+  contact:
+    name: fujioka
+    email: example.com
 servers:
   - url: 'http://localhost:3000'
 paths:
@@ -238,6 +242,52 @@ paths:
           name: Authorization
           description: 'Bearer {temporarily token}'
     parameters: []
+    get:
+      summary: ''
+      operationId: get-books
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+              examples:
+                example-1:
+                  value:
+                    - id: '0142'
+                      title: Software Design 2022.08
+                      author: someone
+                      company: 技術評論社
+                      category: technology
+                      country: Japan
+                      publishDate: '2019-08-24'
+                      createdDatetime: '2019-08-24T10:12:20Z'
+                      updateddDatetime: '2019-08-24T10:12:20Z'
+                    - id: '0143'
+                      title: Software Design 2022.09
+                      author: someone
+                      company: 技術評論社
+                      category: technology
+                      country: Japan
+                      publishDate: '2019-09-20'
+                      createdDatetime: '2019-09-20T10:12:20Z'
+                      updateddDatetime: '2019-09-20T10:12:20Z'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      description: Get a list of existing books
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+          description: 'Bearer {example token}'
 components:
   schemas:
     Book:
