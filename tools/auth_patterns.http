@@ -1,0 +1,8 @@
+## basic authorization ##############
+GET http://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/
+Accept: text/html
+
+####
+GET http://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm
+Authorization: Basic a2FpaW46bmFpc2hv
+# 「user:password」を、Base64でエンコードすること
