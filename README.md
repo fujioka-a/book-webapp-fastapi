@@ -18,6 +18,9 @@ OpenAPIからのFastAPIへのエクスポートによる、基本的なWeb図書
 　・FastAPIによる実装  
 　・テストケースはPytestとする  
 　・Bookオブジェクトの取り回しには、Dataclassを利用する。  
+5)サーバーを立ててアクセスしてみる  
+・Dockerなどを用いて、作成したFastAPIのサーバーをローカルから立てる  
+　⇒まずは簡易なやり方として、uvicornを利用する  
 
 ## 作業実施 
 1) StoplightStudioを利用して、API仕様書を作成   
@@ -42,7 +45,25 @@ npx prism mock book-webapp-fastapi_API-specification.yaml -p 8080
 3)作成したAPI仕様書のymlから、FastAPIへのクラス作成  
 ・OpenAPI Generatorを利用する  
 ・datamodel-code-generator、pydanticをインストールする  
-・以下コマンドより、Dataclassを自動作成する  
+・以下コマンドより、DataclassやAPI実装を、自動作成することができる。  
+　①Datamodel.pyが出力される。  
 ```
 datamodel-codegen --input openapi/specification/book-webapp-fastapi_API-specification.yaml --input-file-type openapi --output datamodel.py
+```
+　②以下コマンドより、FastAPI形式でのDatamodelとAPI実装を自動作成する。  
+```
+fastapi-codegen --input openapi/specification/book-webapp-fastapi_API-specification.yaml --output src/book
+```
+  
+4)サーバーサイドの実装  
+・code Generatorからの出力をひとまずそのまま利用する。  
+　⇒以下は後で実施  
+　　・認証（account）を実装に入れる  
+　　・pytest作成  
+
+5)サーバーを立ててアクセスしてみる  
+・以下コマンドよりサーバーを起動する  
+　※mainとmodelのパス定義は、現状の設定に従うこと  
+```
+uvicorn main:app --reload
 ```

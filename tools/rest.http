@@ -1,4 +1,8 @@
-POST http://127.0.0.1:8080/books
+
+GET http://127.0.0.1:8000/hello
+
+###
+POST http://127.0.0.1:8000/books
 Authorization: "Bearer abcd"
 Content-Type: application/json
 
@@ -27,7 +31,10 @@ Content-Type: application/json
   "publishDate": "2019-08-24"
 }
 ###
-GET http://127.0.0.1:8080/books/1230
+GET http://127.0.0.1:8000/books/0142
+Authorization: "Bearer abcd"
+###
+GET http://127.0.0.1:8000/books
 Authorization: "Bearer abcd"
 
 ####

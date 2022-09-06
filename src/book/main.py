@@ -8,7 +8,7 @@ from typing import List, Optional, Union
 
 from fastapi import FastAPI, Header, Path
 
-from .models import (
+from models import (
     Book,
     BooksBookIdDeleteResponse,
     BooksBookIdGetResponse,
@@ -27,6 +27,12 @@ app = FastAPI(
     contact={'name': 'fujioka', 'email': 'example.com'},
     servers=[{'url': 'http://localhost:3000'}],
 )
+
+
+@app.get("/hello")
+async def hello():
+    # テスト
+    return {"message": "hello world!"}
 
 
 @app.post('/books', response_model=BooksPostResponse)
