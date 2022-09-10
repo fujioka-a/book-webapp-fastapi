@@ -1,8 +1,5 @@
 
-GET http://127.0.0.1:8000/hello
-
-###
-POST http://127.0.0.1:8000/books
+POST http://127.0.0.1:8000/books/0142
 Authorization: "Bearer abcd"
 Content-Type: application/json
 
@@ -17,7 +14,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://127.0.0.1:8080/books/12
+PUT http://127.0.0.1:8080/books/0142
 Authorization: "Bearer abcd"
 Content-Type: application/json
 
@@ -31,15 +28,20 @@ Content-Type: application/json
   "publishDate": "2019-08-24"
 }
 ###
-GET http://127.0.0.1:8000/books/0142
+GET http://127.0.0.1:8000/books/0001
 Authorization: "Bearer abcd"
+Content-Type: application/json
+
 ###
 GET http://127.0.0.1:8000/books
 Authorization: "Bearer abcd"
+Content-Type: application/json
 
 ####
-DELETE http://127.0.0.1:8080/books/123
+DELETE http://127.0.0.1:8080/books/0142
 Authorization: "Bearer abcd"
+Content-Type: application/json
+
 #####pet example###############################################
 # $ curl -s -D /dev/stderr -X GET -H "Accept:application/json" http://localhost:4010/pet/0001?hoge=dow | json_pp
 # -s : not show progress

@@ -42,7 +42,7 @@ npx prism mock book-webapp-fastapi_API-specification.yaml -p 8080
 　・リクエストボディを持つ場合（PUT、POST）：「Contentーtype：application.json」を利用する  
 　・リクエストボディを持つ場合（GET、DELETE）：特になし  
   
-3)作成したAPI仕様書のymlから、FastAPIへのクラス作成  
+3) 作成したAPI仕様書のymlから、FastAPIへのクラス作成  
 ・OpenAPI Generatorを利用する  
 ・datamodel-code-generator、pydanticをインストールする  
 ・以下コマンドより、DataclassやAPI実装を、自動作成することができる。  
@@ -55,15 +55,17 @@ datamodel-codegen --input openapi/specification/book-webapp-fastapi_API-specific
 fastapi-codegen --input openapi/specification/book-webapp-fastapi_API-specification.yaml --output src/book
 ```
   
-4)サーバーサイドの実装  
+4) サーバーサイドの実装  
 ・code Generatorからの出力をひとまずそのまま利用する。  
 　⇒以下は後で実施  
 　　・認証（account）を実装に入れる  
 　　・pytest作成  
 
-5)サーバーを立ててアクセスしてみる  
+5) サーバーを立ててアクセスしてみる  
 ・以下コマンドよりサーバーを起動する  
 　※mainとmodelのパス定義は、現状の設定に従うこと  
 ```
+cd src/book  
+(to move dir. which main file is located in)
 uvicorn main:app --reload
 ```

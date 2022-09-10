@@ -43,8 +43,12 @@
   "git.ignoreLimitWarning": true,
   "cSpell.words": [
     "codegen",
+    "Dataclass",
     "datamodel",
     "fastapi",
-    "pydantic"
+    "openapi",
+    "pydantic",
+    "pytest",
+    "uvicorn"
   ]
 }
